@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  dev:
+    build:
+      dockerfile: Dockerfile
+    volumes:
+      - ..:/workspace
+    command: /bin/bash -c "/workspace/.devcontainer/scripts/init.sh"
+    stdin_open: true
+    # tty: true
+  redis:
+    image: redis:latest
