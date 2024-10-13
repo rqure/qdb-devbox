@@ -14,6 +14,7 @@ REPOS=(
   "https://github.com/rqure/qsmtp.git"
   "https://github.com/rqure/qlogger.git"
   "https://github.com/rqure/qdb-cli.git"
+  "https://github.com/rqure/qsm.git"
 )
 
 # Clone each repository if it doesn't already exist
