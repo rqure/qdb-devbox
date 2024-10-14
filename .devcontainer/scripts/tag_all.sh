@@ -1,8 +1,6 @@
 #!/bin/bash
 
 REPOS=(
-  "https://github.com/rqure/qdb.git"
-  "https://github.com/rqure/qdeploy.git"
   "https://github.com/rqure/qschematic.git"
   "https://github.com/rqure/qwebgateway.git"
   "https://github.com/rqure/qgarage.git"
@@ -13,7 +11,6 @@ REPOS=(
   "https://github.com/rqure/qclock.git"
   "https://github.com/rqure/qsmtp.git"
   "https://github.com/rqure/qlogger.git"
-  "https://github.com/rqure/qdb-cli.git"
   "https://github.com/rqure/qsm.git"
 )
 
