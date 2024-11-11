@@ -12,7 +12,6 @@ REPOS=(
   "https://github.com/rqure/qaudio-player.git"
   "https://github.com/rqure/qclock.git"
   "https://github.com/rqure/qsmtp.git"
-  "https://github.com/rqure/qlogger.git"
   "https://github.com/rqure/qdb-cli.git"
   "https://github.com/rqure/qsm.git"
 )
