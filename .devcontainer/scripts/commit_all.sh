@@ -2,6 +2,7 @@
 
 REPOS=(
   "https://github.com/rqure/qdb.git"
+  "https://github.com/rqure/qlib.git"
   "https://github.com/rqure/qdeploy.git"
   "https://github.com/rqure/qschematic.git"
   "https://github.com/rqure/qwebgateway.git"
