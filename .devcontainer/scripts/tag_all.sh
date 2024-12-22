@@ -10,6 +10,7 @@ REPOS=(
   "https://github.com/rqure/qclock.git"
   "https://github.com/rqure/qsmtp.git"
   "https://github.com/rqure/qsm.git"
+  "https://github.com/rqure/qdp.git"
 )
 
 for REPO in "${REPOS[@]}"; do
