@@ -1,3 +1,3 @@
-FROM mcr.microsoft.com/devcontainers/go:1-1.22-bookworm
+FROM mcr.microsoft.com/devcontainers/go:1.24-bookworm
 
 CMD [ "/bin/bash" ]
