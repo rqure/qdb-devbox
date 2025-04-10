@@ -36,3 +36,6 @@ services:
     command: start-dev
     depends_on:
       - postgres
+  memcached:
+    restart: always
+    image: memcached:latest
