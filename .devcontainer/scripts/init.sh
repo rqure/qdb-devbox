@@ -3,6 +3,7 @@
 REPOS=(
   "https://github.com/rqure/qlib.git"
   "https://github.com/rqure/qcore.git"
+  "https://github.com/rqure/qui.git"
 )
 
 # Clone each repository if it doesn't already exist
