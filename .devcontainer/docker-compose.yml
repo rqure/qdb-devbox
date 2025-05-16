@@ -6,9 +6,6 @@ services:
       - ..:/workspace
     command: /bin/bash -c "/workspace/.devcontainer/scripts/init.sh"
     stdin_open: true
-  nats:
-    restart: always
-    image: nats:latest
   postgres:
     restart: always
     image: postgres:latest
@@ -31,11 +28,20 @@ services:
       KC_HEALTH_ENABLED: true
       KC_BOOTSTRAP_ADMIN_USERNAME: admin
       KC_BOOTSTRAP_ADMIN_PASSWORD: admin
+      KC_HTTP_RELATIVE_PATH: /auth
     ports:
       - "8080:8080"
     command: start-dev
     depends_on:
       - postgres
-  redis:
+  nginx:
+    image: nginx:latest
     restart: always
-    image: redis:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./certs:/etc/nginx/certs
+    depends_on:
+      - keycloak
