@@ -19,7 +19,7 @@ O = Qureshi Enterprise Inc
 CN = qos
 
 [v3_req]
-keyUsage = keyEncipherment, dataEncipherment
+keyUsage = digitalSignature, keyCertSign, cRLSign
 extendedKeyUsage = serverAuth
 subjectAltName = @alt_names
 
