@@ -17,4 +17,6 @@ for REPO in "${REPOS[@]}"; do
   fi
 done
 
+/workspace/.devcontainer/scripts/generate_ssl_certs.sh
+
 /bin/bash
