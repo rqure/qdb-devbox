@@ -4,11 +4,36 @@
 CERT_DIR="/tmp/qos_certs"
 mkdir -p $CERT_DIR
 
-# Generate a self-signed certificate for development
+# Create OpenSSL config file with SAN extension
+cat > $CERT_DIR/openssl.cnf << EOF
+[req]
+distinguished_name = req_distinguished_name
+x509_extensions = v3_req
+prompt = no
+
+[req_distinguished_name]
+C = CA
+ST = Alberta
+L = Edmonton
+O = Qureshi Enterprise Inc
+CN = qos
+
+[v3_req]
+keyUsage = keyEncipherment, dataEncipherment
+extendedKeyUsage = serverAuth
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1 = qos
+DNS.2 = localhost
+EOF
+
+# Generate a self-signed certificate for development with SAN
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
   -keyout "$CERT_DIR/qos.key" \
   -out "$CERT_DIR/qos.crt" \
-  -subj "/C=CA/ST=Alberta/L=Edmonton/O=Organization/CN=qos"
+  -config "$CERT_DIR/openssl.cnf" \
+  -extensions v3_req
 
 # Set proper permissions
 chmod 644 "$CERT_DIR/qos.crt"
@@ -35,6 +60,6 @@ else
   # You might need to adjust the docker-compose.yml volume mapping
 fi
 
-echo "SSL certificates generated successfully with CN=qos in Edmonton, AB, Canada."
+echo "SSL certificates generated successfully with CN=qos and SAN=qos,localhost"
 echo "Certificate location: $CERT_DIR/qos.crt"
 echo "Key location: $CERT_DIR/qos.key"

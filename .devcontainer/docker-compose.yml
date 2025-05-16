@@ -31,6 +31,9 @@ services:
       KC_BOOTSTRAP_ADMIN_USERNAME: admin
       KC_BOOTSTRAP_ADMIN_PASSWORD: admin
       KC_HTTP_RELATIVE_PATH: /auth
+      KC_PROXY: edge
+      KC_HOSTNAME_URL: https://localhost
+      KC_HOSTNAME_ADMIN_URL: https://localhost
     ports:
       - "8080:8080"
     command: start-dev
