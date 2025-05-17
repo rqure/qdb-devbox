@@ -32,10 +32,16 @@ services:
       KC_BOOTSTRAP_ADMIN_PASSWORD: admin
       KC_HTTP_RELATIVE_PATH: /auth
       KC_PROXY: edge
+      KC_HTTPS_CERTIFICATE_FILE: /opt/keycloak/conf/qos.crt
+      KC_HTTPS_CERTIFICATE_KEY_FILE: /opt/keycloak/conf/qos.key
+      KC_HTTPS_PROTOCOLS: TLSv1.3,TLSv1.2
+      KC_HTTP_ENABLED: false
       KC_HOSTNAME_URL: https://localhost
       KC_HOSTNAME_ADMIN_URL: https://localhost
     ports:
-      - "8080:8080"
+      - "8443:8443"
+    volumes:
+      - ./certs:/opt/keycloak/conf
     command: start-dev
     depends_on:
       - postgres
