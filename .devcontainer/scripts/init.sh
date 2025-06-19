@@ -1,7 +1,7 @@
 #!/bin/bash
 
 REPOS=(
-  "https://github.com/rqure/qlib.git"
+  "https://github.com/rqure/qlib-rs.git"
   "https://github.com/rqure/qcore.git"
   "https://github.com/rqure/qui.git"
 )
