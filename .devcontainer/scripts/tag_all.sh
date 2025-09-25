@@ -1,7 +1,7 @@
 #!/bin/bash
 
 REPOS=(
-  "https://github.com/rqure/qcore.git"
+  "https://github.com/rqure/qcore-rs.git"
 )
 
 for REPO in "${REPOS[@]}"; do
