@@ -2,6 +2,7 @@
 
 REPOS=(
   "https://github.com/rqure/qcore-rs.git"
+  "https://github.com/rqure/qweb.git"
 )
 
 for REPO in "${REPOS[@]}"; do
